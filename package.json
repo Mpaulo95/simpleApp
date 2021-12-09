@@ -5,7 +5,8 @@
   "scripts": {
     "install-both": "concurrently \"cd client && npm install\" \" cd api && npm install\"",
     "dev": "concurrently \"cd client && npm start\" \"cd api && npm start \"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "cm": "git cz"
   },
   "author": "Elie Paul",
   "license": "ISC",
