@@ -1,0 +1,34 @@
+{
+  "name": "simpleapp",
+  "version": "1.0.0",
+  "description": "A simple app",
+  "scripts": {
+    "install-both": "concurrently \"cd client && npm install\" \" cd api && npm install\"",
+    "dev": "concurrently \"cd client && npm start\" \"cd api && npm start \"",
+    "prepare": "husky install"
+  },
+  "author": "Elie Paul",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "commitizen-emoji": "^1.0.5",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-emoji-conventional": "^1.0.1",
+    "husky": "^7.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-emoji-conventional"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  }
+}
